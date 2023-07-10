@@ -1,0 +1,8 @@
+{
+    "workspace.library": [
+        "/tmp/.mount_nvim-0250J4b/usr/share/nvim/runtime/lua",
+        "/home/ashish/.config/nvim/lua",
+        "/home/ashish/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/5a6b3b13",
+        "/home/ashish/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/1aa3cc1c"
+    ]
+}
