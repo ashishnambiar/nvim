@@ -54,8 +54,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>mm", "mmggVG='m")
 
 -- reformat using lsp
-vim.keymap.set("n", "<leader>rf", function()
-    vim.lsp.buf.format()
+vim.keymap.set("n", "<leader>fm", function()
+  vim.lsp.buf.format()
 end)
 
 -- delete word and paste
@@ -74,3 +74,26 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>d", "\"_d")
 vim.keymap.set("n", "<C-f>", "<cmd>NvimTreeFindFileToggle<CR>")
 vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 
+-- add next in error list
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-p>", "<cmd>cprevious<CR>")
+
+-- dart analyze into quickfix list
+vim.keymap.set("n", "<leader>fan",
+  ":cexpr system(\"dart analyze | grep -i dart | awk '{print $3}'\")<CR>:copen<CR><CR>")
+
+vim.keymap.set("n", "<leader>oiu", function()
+  local search = vim.fn.input('Search => ');
+  if search == '' then
+    vim.fn.nvim_out_write('Search string is required');
+    return;
+  end
+  local extenstion = vim.fn.input('file type (eg: dart, lua, c, yaml) => ');
+  if extenstion == '' then
+    vim.fn.nvim_out_write('file type is required');
+    return;
+  end
+  vim.api.nvim_command(
+    'cexpr system(\"grep -n \\\"' .. search .. '\\\" **/*.' .. extenstion .. '\")'
+  );
+end)
