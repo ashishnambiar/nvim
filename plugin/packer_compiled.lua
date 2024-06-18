@@ -190,6 +190,11 @@ _G.packer_plugins = {
     path = "/Users/aakashnilavan/.local/share/nvim/site/pack/packer/start/staline.nvim",
     url = "https://github.com/tamton-aquib/staline.nvim"
   },
+  ["tabnine-nvim"] = {
+    loaded = true,
+    path = "/Users/aakashnilavan/.local/share/nvim/site/pack/packer/start/tabnine-nvim",
+    url = "https://github.com/codota/tabnine-nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/aakashnilavan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
