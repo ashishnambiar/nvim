@@ -78,6 +78,13 @@ vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-p>", "<cmd>cprevious<CR>")
 
+-- buffer navigation
+vim.keymap.set("n", "gn", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<C-s>", "<cmd>bnext<CR>") -- extra keybinding to easily move through buffers
+vim.keymap.set("n", "gp", "<cmd>bprev<CR>")
+vim.keymap.set("n", "gx", "<cmd>bdelete<CR>")
+vim.keymap.set("n", "ge", "<cmd>enew<CR>")
+
 -- dart analyze into quickfix list
 vim.keymap.set("n", "<leader>fan",
   ":cexpr system(\"dart analyze | grep -i dart | awk '{print $3}'\")<CR>:copen<CR><CR>")

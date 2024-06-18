@@ -31,7 +31,7 @@ vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
 vim.opt.laststatus = 2
-vim.opt.showtabline = 1
+vim.opt.showtabline = 2
 vim.opt.signcolumn = "yes"
 
 vim.opt.splitright = true
