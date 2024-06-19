@@ -61,7 +61,11 @@ return require("packer").startup(function(use)
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   }
-  use("tamton-aquib/staline.nvim")
+  -- use("tamton-aquib/staline.nvim")
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+  use { 'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   use("norcalli/nvim-colorizer.lua")
   use("lewis6991/gitsigns.nvim")
   use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }

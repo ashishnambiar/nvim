@@ -56,6 +56,6 @@
 --   },
 -- }
 --
-require('stabline').setup()
+-- require('stabline').setup()
 
 -- require('staline').setup()
