@@ -2,9 +2,19 @@ local lsp = require('lsp-zero').preset({})
 
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').dartls.setup {}
+-- require('lspconfig').dartls.setup {}
 require('lspconfig').bashls.setup {}
-require('lspconfig').gopls.setup {}
+require('lspconfig').gopls.setup {
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true,
+            }
+        }
+    }
+}
 require('lspconfig').emmet_ls.setup {}
 require('lspconfig').tsserver.setup {}
 

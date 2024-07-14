@@ -54,7 +54,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>mm", "mmggVG='m")
 
 -- reformat using lsp
-vim.keymap.set("n", "<leader>rf", function()
+vim.keymap.set("n", "<leader>fm", function()
     vim.lsp.buf.format()
 end)
 
@@ -72,5 +72,3 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>d", "\"_d")
 
 -- tree-sitter
 vim.keymap.set("n", "<C-f>", "<cmd>NvimTreeFindFileToggle<CR>")
-vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
-
