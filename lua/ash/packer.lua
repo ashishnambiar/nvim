@@ -25,7 +25,7 @@ return require("packer").startup(function(use)
     branch = 'v2.x',
     requires = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },       -- Required
+      { 'neovim/nvim-lspconfig' }, -- Required
       {
         -- Optional
         'williamboman/mason.nvim',
@@ -33,12 +33,12 @@ return require("packer").startup(function(use)
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
-      { 'williamboman/mason-lspconfig.nvim' },       -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },           -- Required
-      { 'hrsh7th/cmp-nvim-lsp' },       -- Required
-      { 'L3MON4D3/LuaSnip' },           -- Required
+      { 'hrsh7th/nvim-cmp' },     -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
     }
   }
   use('saadparwaiz1/cmp_luasnip')
@@ -58,10 +58,11 @@ return require("packer").startup(function(use)
     'akinsho/flutter-tools.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',       -- optional for vim.ui.select
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   }
   use("tamton-aquib/staline.nvim")
   use("norcalli/nvim-colorizer.lua")
   use("lewis6991/gitsigns.nvim")
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 end)
