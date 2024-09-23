@@ -81,6 +81,7 @@ vim.keymap.set("n", "<C-p>", "<cmd>cprevious<CR>")
 -- buffer navigation
 vim.keymap.set("n", "<C-m>", "<cmd>bnext<CR>") -- extra keybinding to easily move through buffers
 vim.keymap.set("n", "<C-s>", "<cmd>bprev<CR>") -- extra keybinding to easily move through buffers
+vim.keymap.set("n", "<C-q>", "<cmd>bd<CR>") -- extra keybinding to easily delete buffers
 vim.keymap.set("n", "gn", "<cmd>bnext<CR>")
 vim.keymap.set("n", "gp", "<cmd>bprev<CR>")
 vim.keymap.set("n", "gx", "<cmd>bdelete<CR>")
