@@ -68,5 +68,10 @@ return require("packer").startup(function(use)
   }
   use("norcalli/nvim-colorizer.lua")
   use("lewis6991/gitsigns.nvim")
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+  use {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
+  }
 end)
