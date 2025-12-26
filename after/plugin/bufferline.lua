@@ -4,6 +4,12 @@ require("bufferline").setup {
     diagnostics = "nvim_lsp",
 
     -- rest of config ...
+    -- separator_style = "slant",
+    indicator = {
+      icon = '▌', -- this should be omitted if indicator style is not 'icon'
+      style = 'icon'
+    },
+
 
     --- count is an integer representing total count of errors
     --- level is a string "error" | "warning"

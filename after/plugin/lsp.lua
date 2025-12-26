@@ -4,7 +4,20 @@ local lsp = require('lsp-zero').preset({})
 require('lspconfig').bashls.setup {}
 require('lspconfig').clangd.setup {}
 -- require('lspconfig').dartls.setup {}
-require('lspconfig').emmet_ls.setup {}
+require('lspconfig').emmet_ls.setup {
+  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "hbs" },
+}
+require('lspconfig').kotlin_language_server.setup {
+  -- Other potential configurations for kotlin_language_server
+  -- ...
+  init_options = {
+    -- Set a valid storage path. You can use a path within Neovim's data directory.
+    storagePath = vim.fn.stdpath('data') .. '/kotlin-language-server', -- Use '/' for Unix-like systems (macOS, Linux)
+    -- Add any other necessary init_options according to kotlin-language-server documentation
+  },
+  -- Add this if you are using mason-lspconfig
+  -- on_attach = require('mason-lspconfig').on_attach(),
+}
 require 'lspconfig'.lua_ls.setup {
   on_init = function(client)
     local path = client.workspace_folders[1].name
@@ -44,6 +57,13 @@ require('lspconfig').sourcekit.setup {
   cmd = { '/usr/bin/sourcekit-lsp' }
 }
 require('lspconfig').zls.setup {}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+vim.lsp.config('html', {
+  capabilities = capabilities,
+})
+
 
 local cmp = require('cmp')
 -- local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -139,7 +159,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-t>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()

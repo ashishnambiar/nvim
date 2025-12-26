@@ -14,7 +14,9 @@ return require("packer").startup(function(use)
     -- or                            , branch = "0.1.x",
     requires = { { "nvim-lua/plenary.nvim" } }
   }
+  use("mfussenegger/nvim-dap")
   use("NLKNguyen/papercolor-theme")
+  use("folke/tokyonight.nvim")
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
   use("nvim-treesitter/playground")
   use("ThePrimeagen/harpoon")
@@ -44,7 +46,6 @@ return require("packer").startup(function(use)
   use('saadparwaiz1/cmp_luasnip')
   use("nvim-tree/nvim-tree.lua")
   use("nvim-tree/nvim-web-devicons")
-  use("lukas-reineke/indent-blankline.nvim")
   use { "akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
   end }
